@@ -50,6 +50,7 @@
 
 
 			$rock_titles = 0;
+			$heavy_metal_titles = 0;
 foreach ($cds as $cd){
 	echo "<ul>";
 	echo "<li>" . "<img src=".$cd['album-art']." />" . '<br />' . $cd['artist'] . '<br /> ' . $cd['album'] . ' ' .
@@ -70,9 +71,13 @@ foreach ($cds as $cd){
 if (in_array("rock", $cd['tags'])) {
 	$rock_titles++;
 }
+if (in_array("heavy metal", $cd['tags'])){
+	$heavy_metal_titles++;
+}
 }//end foreach on the cds
-echo $rock_titles;
-//echo count($cds(array['tags']) == "rock");
+echo "Number of CDs tagged with \"rock\": " . $rock_titles . "<br />";
+echo "Number of CDs tagged with \"heavy metal\": " . $heavy_metal_titles . "<br />";
+
 
 
 ?>
